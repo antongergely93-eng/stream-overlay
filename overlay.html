@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Név Overlay</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+    #kijelzo {
+      margin-top: 40px;
+      font-size: 48px;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px black;
+    }
+  </style>
+</head>
+<body>
+  <div id="kijelzo"></div>
+
+  <script>
+    const kijelzo = document.getElementById("kijelzo");
+
+    function frissit() {
+      const nev = localStorage.getItem("kivalasztottNev") || "";
+      kijelzo.textContent = nev;
+    }
+
+    // 0.5 másodpercenként frissítjük a kijelzőt
+    setInterval(frissit, 500);
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Név vezérlő</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    select { font-size: 18px; padding: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Név kiválasztása</h2>
+  <select id="nevek">
+    <option value="">-- semmi --</option>
+    <option value="Pisti">Pisti</option>
+    <option value="Jani">Jani</option>
+    <option value="Kata">Kata</option>
+    <option value="Ádám">Ádám</option>
+  </select>
+
+  <script>
+    const select = document.getElementById("nevek");
+    select.addEventListener("change", () => {
+      // elmentjük a választást a böngészőbe
+      localStorage.setItem("kivalasztottNev", select.value);
+    });
+  </script>
+</body>
+</html>
